@@ -1,45 +1,21 @@
 let cl=console.log;
 
-// interface Iperson{
-//     fname:string,
-//     lname:string,
-//     age:number,
-//     email:string,
-//     greet(phrase:string):void
-// }
-
-// let person:Iperson
-// person={
-//     fname:"Jhon",
-//     lname:"Doe",
-//     age:20,
-//     email:"abc@gmail.com",
-//     greet(phrase) {
-        
-//     },
-// }
-
-//=========================================================//
-
-interface Iname{
-    fname:string
+function logMsg(nameofClass:string){
+    return function (target:Function){
+        cl(`Instance of class ${nameofClass} is created!!!`)
+    }
 }
 
-interface Iperson extends Iname{
-    age:number,
-    greet(phrase:string):void
+@logMsg("Department") class Department{
+    constructor(){
+
+    }
 }
+let d1=new Department()
 
+@logMsg("Person") class Person{
+    constructor(){
 
-let person1:Iperson;
-
-person1={   
-fname:"Jhon",
-age:20,
-greet(phrase){
-    cl(`${phrase} ${this.fname}`)
+    }
 }
-}
-
-
-
+let p1=new Department()
